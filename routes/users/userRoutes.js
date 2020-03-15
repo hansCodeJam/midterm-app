@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const {validationResult} = require('express-validator');
 const User = require('./models/User')
+require('../../lib/passport')
 
 router.get('/register', (req, res) => {
     res.render('auth/register')
@@ -39,6 +40,16 @@ router.post('/register', (req, res, next) => {
             } 
           })
 })
+
+router.get('/login', (req, res) => {
+  res.render('auth/login')
+})
+
+router.post('/login', passport.authenticate('local-login', {
+  successRedirect: '/us/nbaApp',
+  failureRedirect: '/users/login',
+  failureFlash: true
+}))
 
 
 module.exports = router;

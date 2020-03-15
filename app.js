@@ -35,6 +35,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET,
+  store: new MongoStore({
+    url: process.env.MONGODB_URI,
+    autoReconnect: true,
+    cookie: { maxAge : 60000}
+  })
+})
+)
+
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
