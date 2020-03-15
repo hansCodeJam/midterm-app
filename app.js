@@ -1,13 +1,29 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+require('dotenv').config();
+const flash = require('connect-flash');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const passport =require('passport');
+const methodOverride = require('method-override');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users/userRoutes');
 
-var app = express();
+const app = express();
+
+//connect db
+mongoose.connect(process.env.MONGODB_URI,{
+  useNewUrlParser:true,
+  useUnifiedTopology:true,
+  useCreateIndex:true
+}).then(()=>{
+  console.log('Mongodb Connected')
+}).catch(err=> console.log(`mongo error:${error}`))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
