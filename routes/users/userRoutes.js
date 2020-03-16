@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const {validationResult} = require('express-validator');
+const userValidation = require('../utils/userValidation');
 const User = require('./models/User')
 require('../../lib/passport')
 
@@ -39,7 +40,9 @@ router.post('/register', (req, res, next) => {
           })
             } 
           })
-})
+}, userValidation);
+
+
 
 router.get('/login', (req, res) => {
   res.render('auth/login')
