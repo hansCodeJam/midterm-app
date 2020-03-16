@@ -46,7 +46,7 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', passport.authenticate('local-login', {
-  successRedirect: '/us/nbaApp',
+  successRedirect: '/',
   failureRedirect: '/users/login',
   failureFlash: true
 }))
