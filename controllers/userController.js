@@ -1,6 +1,7 @@
-const User = ('../routes/users/User');
 const bcrypt = ('bcryptjs');
 const passport = ('passport');
+const {validationResult} = require('express-validator');
+const User = ('../');
 require('../lib/passport');
 
 module.exports = {
