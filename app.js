@@ -4,14 +4,17 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 const flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport =require('passport');
 const methodOverride = require('method-override');
+const cors = require('cors');
 
 const indexRouter = require('./routes/index');
+const basketballRouter = require('./routes/api/apiRoutes')
 const usersRouter = require('./routes/users/userRoutes');
 
 const app = express();
@@ -35,6 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cors())
 app.use(flash());
 
 app.use(session({
@@ -53,6 +57,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use('/', indexRouter);
+app.use('/api/v1', basketballRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
