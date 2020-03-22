@@ -90,12 +90,24 @@
               
             <div class="sidenav">
               <div class="login-main-text">
-                  <img src="../../public/images/nba-logo-transparent.png" id="nba-logo"  />
+                  <img src="/images/nba-logo-transparent.png" id="nba-logo" width="50px"  />
                   <h2>NBA players stats<br> Login Page</h2>
                  <p>Login or register from here to access.</p>
               </div>
            </div>
            <div class="main">
+            <% if (errors.length > 0) { %>
+                <div class= "alert alert-danger alert-dismissible">
+                    <button
+                    type="button"
+                    class="class"
+                    data-dismiss="alert"
+                    aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <%= errors %> 
+                </div>
+            <% } %>
               <div class="col-md-6 col-sm-12">
                  <div class="login-form">
                     <form role="form" method="POST" action="/users/login">
