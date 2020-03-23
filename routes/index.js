@@ -35,9 +35,9 @@ router.get('/', function(req, res, next) {
   fetch(url, settings)
       .then(res => res.json())
       .then((data) => {
-        console.log(data[0].name)
-      });
-  res.render('index', {title: 'Express'})
+        console.log(data)
+        res.render('index', {data})
+      })
   });
   
   module.exports = router;

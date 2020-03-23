@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome <%= title %></p>
+    <div>
+      <% data.forEach((post) => { %>
+          <h4 class="list-group-item-heading"><%= post.name %></h4>
+          <p class="list-group-item-text"><%= post.team_name %></p>
+        </a>
+      <% }) %>
+    </div>
+   
   </body>
 </html>
 
