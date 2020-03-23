@@ -7,9 +7,9 @@
   <body>
     <div>
       <% data.forEach((post) => { %>
+          <img src='https://nba-players.herokuapp.com/players/<%= post.name.split(' ').slice(-1).join('') %>/<%= post.name.split(' ').slice(0, -1).join('') %>' />
           <h4 class="list-group-item-heading"><%= post.name %></h4>
           <p class="list-group-item-text"><%= post.team_name %></p>
-        </a>
       <% }) %>
     </div>
    

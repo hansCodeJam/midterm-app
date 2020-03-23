@@ -35,7 +35,6 @@ router.get('/', function(req, res, next) {
   fetch(url, settings)
       .then(res => res.json())
       .then((data) => {
-        console.log(data)
         res.render('index', {data})
       })
   });
