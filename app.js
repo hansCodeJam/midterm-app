@@ -56,10 +56,11 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use((req, res, next) => {
-  res.locals.user;
+  res.locals.user =req.user;
   res.locals.errors = req.flash('error');
   res.locals.message = req.flash('message');
   res.locals.success = req.flash('success');
+  next();
 })
 
 app.use('/', indexRouter);

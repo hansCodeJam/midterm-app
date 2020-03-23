@@ -15,7 +15,7 @@ router.get('/register', (req, res) => {
 router.post('/register', userController.register, userValidation);
 
 router.get('/login', (req, res) => {
-  res.render('auth/login')
+  res.render('auth/login', {error:null})
 })
 
 router.post('/login', passport.authenticate('local-login', {
