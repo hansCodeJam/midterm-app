@@ -13,6 +13,10 @@ router.get('/register', (req, res) => {
     res.render('auth/register')
 })
 
+router.get('/option', (req, res) => {
+  res.render('option')
+})
+
 router.post('/register', userController.register, userValidation);
 
 router.get('/login', (req, res) => {
