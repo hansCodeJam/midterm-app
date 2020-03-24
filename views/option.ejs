@@ -10,6 +10,8 @@
             :root {
             --color1: #17408B;
             --color2: #C9082A;
+            --color3: #552583;
+            --color4: #FDB927;
             --transition-time: 0.5s;
             }
 
@@ -83,7 +85,7 @@
             display: flex;
             }
 
-            .card .tags .tag {
+            .card .tags .tag{
             font-size: 0.75em;
             background: rgba(255,255,255,0.5);
             border-radius: 0.3rem;
@@ -97,10 +99,24 @@
                 color: var(--color1);
             }
 
+            .card:hover .purple {
+                color: var(--color3)
+            }
+
             .card:hover .tag {
             background: var(--color2);
             color: white;
             }
+
+            .card:hover #yellow {
+            background: var(--color4);
+            color: white;
+            }
+
+            /* .card:hover .yellow {
+            background: var(--color4);
+            color: white;
+            } */
 
             .card .date {
             position: absolute;
@@ -215,7 +231,7 @@
           </section>
           <section class="cards-wrapper">
             <div class="card-grid-space">
-              <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+              <a class="card" href="/views/index.ejs" style="--bg-img: url('https://sportshub.cbsistatic.com/i/r/2018/09/15/f0e813c2-ad7f-453e-855d-097d9f4feed7/thumbnail/1200x675/ebf4ab495c328c63734a58e4c34f8c2a/top100-cover.png')">
                 <div class="blue">
                   <h1>NBA Players</h1>
                   <p>Check players stats</p>
@@ -227,8 +243,8 @@
               </a>
             </div>
             <div class="card-grid-space">
-              <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
-                <div>
+              <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url('https://upload.wikimedia.org/wikipedia/commons/3/35/StaplesCenter051209.jpg')">
+                <div class="blue">
                   <h1>Stadiums</h1>
                   <p>Images of all NBA Stadiums and city background</p>
                   <div class="tags">
@@ -239,12 +255,12 @@
             </div>
             <div class="card-grid-space">
               <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg')">
-                <div>
-                  <h1>Links, images and about file paths</h1>
-                  <p>Learn how to use links and images along with file paths…</p>
-                  <div class="date">14 Oct 2017</div>
+                <div class="purple">
+                  <h1>Kobe Tribute</h1>
+                  <p>Rip Kobe</p>
+                  <div class="date">26 Jan 2020</div>
                   <div class="tags">
-                    <div class="tag">HTML</div>
+                    <div class="tag" id="yellow">HTML</div>
                   </div>
                 </div>
               </a>
