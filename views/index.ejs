@@ -16,6 +16,7 @@ body {
   background-size: cover;
 }
 
+
 header img {
   border-radius: 50%;
   margin: 20px auto;
@@ -24,20 +25,40 @@ header img {
   border: 5px solid #fff;
 }
 
+header.Timberwolves img {
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  width: 200px;
+  border: 5px solid #236192;
+}
+
+
 aside {
-  border-top: 0px solid #26A69A;
-  border-bottom: 0px solid #00695C;
   border-radius: 50%;
   margin: 0 auto;
   display: block;
   height: 250px;
   width: 250px;
-  background: url(https://s-media-cache-ak0.pinimg.com/736x/3a/1f/02/3a1f02c10700daa80655a302c5a27acf.jpg);
+  background: url('/images/teams/Bulls.png');
   background-size: cover;
   overflow: hidden;
   box-shadow: 0 0 100px 10px #fff;
   transition: all ease 0.3s;
 }
+
+/* aside.Timberwolves {
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  height: 250px;
+  width: 250px;
+  background: url('/images/teams/Timberwolves.png');
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: 0 0 100px 10px #fff;
+  transition: all ease 0.3s;
+} */
 
 aside:hover {
   border-top: 4px solid #26A69A;
@@ -47,6 +68,15 @@ aside:hover {
   width: 350px;
   box-shadow: 0 0 70px 10px #fff;
 }
+
+/* aside.Timberwolves:hover {
+  border-top: 4px solid #236192;
+  border-bottom: 4px solid #236192;
+  border-radius: 5px;
+  height: 480px;
+  width: 350px;
+  box-shadow: 0 0 70px 10px #fff;
+} */
 
 aside:hover header img {
   animation: profile_image 2000ms linear both;
@@ -350,54 +380,58 @@ aside:hover ul li:nth-child(3) {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
-    </style>
+</style>
+        <% data.forEach((post) => { %>
+        <link rel="stylesheet" href="../public/stylesheets/teams/<%= post.team_name.split(' ').slice(-1).join('') %>.css">
+        <%= }) %> 
   </head>
   <body>
+<div>
+  <% data.forEach((post) => { %>
+  <aside class="profile-card <%= post.team_name.split(' ').slice(-1).join('') %> ">
 
-<aside class="profile-card">
+    <header class="<%= post.team_name.split(' ').slice(-1).join('') %>">
+      <img src='https://nba-players.herokuapp.com/players/<%= post.name.split(' ').slice(-1).join('') %>/<%= post.name.split(' ').slice(0, -1).join('') %>' />  
+      <h1><%= post.name %></h1>
+  
+        <h2>- Full Stack Web Developer -</h2>
+  
+    </header>
+  
+    <div class="profile-bio">
+  
+      <p>Hello there!</p>
+      <p>I am a full stack web developer. I mainly work with PHP, HTML, CSS, JS and WordPress.
+        <br />I also play well with Photoshop, Corel Draw, After Effects and other cool stuff.</p>
+  
+    </div>
+  
+    <ul class="profile-social-links">
+  
+      <li>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-twitter.svg">
+      </li>
+  
+      <li>
+        <a href="https://envato.com">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-envato.svg">
+        </a>
+      </li>
+  
+      <li>
+        <a href="https://codepen.io/tutsplus">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-codepen.svg">
+        </a>
+      </li>
+  
+  
+    </ul>
+  
+  </aside>
+  <% }) %>
 
-  <header>
-      <a href="https://tutsplus.com">
-        <img src="https://randomuser.me/api/portraits/men/99.jpg">
-      </a>
+</div>
 
-      <h1>George Darkos</h1>
-
-      <h2>- Full Stack Web Developer -</h2>
-  </header>
-
-  <div class="profile-bio">
-
-    <p>Hello there!</p>
-    <p>I am a full stack web developer. I mainly work with PHP, HTML, CSS, JS and WordPress.
-      <br />I also play well with Photoshop, Corel Draw, After Effects and other cool stuff.</p>
-
-  </div>
-
-  <ul class="profile-social-links">
-
-    <li>
-      <a href="https://twitter.com/tutsplus">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-twitter.svg">
-      </a>
-    </li>
-
-    <li>
-      <a href="https://envato.com">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-envato.svg">
-      </a>
-    </li>
-
-    <li>
-      <a href="https://codepen.io/tutsplus">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-codepen.svg">
-      </a>
-    </li>
-
-
-  </ul>
-
-</aside>
 <!-- that’s all folks! -->
   </body>
 </html>
