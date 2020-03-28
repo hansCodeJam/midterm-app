@@ -1,6 +1,6 @@
 aside.Lakers:hover {
-    border-top: 4px solid #236192;
-    border-bottom: 4px solid #236192;
+    border-top: 4px solid #552583;
+    border-bottom: 4px solid #552583;
     border-radius: 5px;
     height: 480px;
     width: 350px;
@@ -12,16 +12,15 @@ aside.Lakers:hover {
     margin: 20px auto;
     display: block;
     width: 200px;
-    border: 5px solid #236192;
+    border: 5px solid #FDB927;
   }
   
   aside.Lakers {
     border-radius: 50%;
     margin: 0 auto;
     display: block;
-    height: 250px;
-    width: 250px;
-    background: url('/images/teams/Lakers.png');
+    height: 200px;
+    width: 200px;
     background-size: cover;
     overflow: hidden;
     box-shadow: 0 0 100px 10px #fff;
