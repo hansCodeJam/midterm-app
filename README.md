@@ -1,4 +1,4 @@
-An NbA app that lets you register and login to an option page where you choose between three categories - players stats, stadiums, and Kobe's tribute. Stadiums and Kobe's tribute are future functions. The players stats will take you to another page where you have all displayed player with hover cards. All hover cards will display their pictures, team logo, and stats. All picture and stats are from 2017/2018 season.
+An NbA app that lets you register and login to an option page where you choose between three categories - players stats, stadiums, and Kobe's tribute. Stadiums and Kobe's tribute are future functionalities. The players stats will take you to another page where you have all displayed player with hover cards. All hover cards will display their pictures, team logo, and stats. All picture and stats are from 2017/2018 season.
 
 
 tools -
