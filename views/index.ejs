@@ -17,8 +17,8 @@ body {
 }
 
 aside:hover {
-    border-top: 4px solid #236192;
-    border-bottom: 4px solid #236192;
+    border-top: 4px solid #ED174C;
+    border-bottom: 4px solid #ED174C;
     border-radius: 5px;
     height: 480px;
     width: 350px;
@@ -30,7 +30,7 @@ header img {
   margin: 20px auto;
   display: block;
   width: 200px;
-  border: 5px solid #fff;
+  border: 5px solid #006BB6;
 }
 
 aside {
@@ -381,11 +381,10 @@ aside:hover ul li:nth-child(3) {
           
           <div class="profile-bio">
                 
-            <img src="/images/teams/<%= post.team_name.split(' ').slice(-1).join('') %>.png " width="75px"/>
+            <img src="/images/teams/<%= post.team_name.split(' ').slice(-1).join('') %>.png " width="50px"/>
               
               <div id="profile-stats">
                 <p>Games Played: <%= post.games_played %> </p>
-                <p>Field Goals Attempted Made Per Game: <%= post.field_goals_attempted_per_game %> </p>
                 <p>Field Goals Made Per Game: <%= post.field_goals_made_per_game %> </p>
                 <p>Rebound: <%= post.rebounds_per_game %> </p>
                 <p>Assists: <%= post.assists_per_game %> </p>

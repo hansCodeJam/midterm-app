@@ -1,0 +1,28 @@
+aside.Warriors:hover {
+    border-top: 4px solid #FFC72C;
+    border-bottom: 4px solid #FFC72C;
+    border-radius: 5px;
+    height: 480px;
+    width: 350px;
+    box-shadow: 0 0 70px 10px #fff;
+  }
+  
+  header.Warriors img {
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+    width: 200px;
+    border: 5px solid #1D428A;;
+  }
+  
+  aside.Warriors {
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0 0 100px 10px #fff;
+    transition: all ease 0.3s;
+  }

@@ -27,7 +27,7 @@ module.exports = {
         
           newUser.save().then((user) => {
                 if(user) {
-                  res.status(200).json({message: 'success', user})
+                  res.render('auth/login', {error:null})
                 }
               }).catch(err=> {
                 return next(err);
