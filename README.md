@@ -7,5 +7,7 @@ tools -
 - team colors - https://teamcolorcodes.com/nba-team-color-codes/ 
 - team logos - https://www.stickpng.com/search?q=nba&page=1
 - hover card - https://codepen.io/darkosxrc/pen/ZGRQbv 
+- login/register page - https://bootsnipp.com/snippets/7nk08
 - code editor - visual studio code
+
 

@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const {validationResult} = require('express-validator');
 const userValidation = require('../utils/userValidation');
+const fetch = require('node-fetch');  
 //const User = require('./models/User')
 const userController = require('../../controllers/userController')
 //const fetch = require('node-fetch');
@@ -23,23 +24,22 @@ router.get('/login', (req, res) => {
   res.render('auth/login', {error:null})
 })
 
-// router.get('/', function(req, res, next) {
-//   let url = "https://nba-players.herokuapp.com/players-stats";
+router.get('/player', function(req, res, next) {
+  let url = "https://nba-players.herokuapp.com/players-stats";
 
-//   let settings = { method: "Get" };
+  let settings = { method: "Get" };
   
-//   fetch(url, settings)
-//       .then(res => res.json())
-//       .then((data) => {
-//         res.render('index', {data})
-//       })
-//   })
+  fetch(url, settings)
+      .then(res => res.json())
+      .then((data) => {
+        res.render('index', {data})
+      })
+  })
 
 router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/',
   failureRedirect: '/users/login',
   failureFlash: true
 }))
-
 
 module.exports = router;
