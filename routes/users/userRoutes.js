@@ -37,7 +37,7 @@ router.get('/player', function(req, res, next) {
   })
 
 router.post('/login', passport.authenticate('local-login', {
-  successRedirect: '/',
+  successRedirect: '/users/option',
   failureRedirect: '/users/login',
   failureFlash: true
 }))

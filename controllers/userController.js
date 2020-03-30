@@ -27,7 +27,7 @@ module.exports = {
         
           newUser.save().then((user) => {
                 if(user) {
-                  res.render('auth/login', {error:null})
+                  res.render('option')
                 }
               }).catch(err=> {
                 return next(err);

@@ -3,7 +3,7 @@ const router = express.Router();
 const fetch = require('node-fetch');  
 
 router.get('/', function(req, res, next) {
-      res.render('option')
+      res.render('auth/login')
 })
 
 // router.get('/', function(req, res, next) {
