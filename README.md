@@ -1,7 +1,8 @@
 An NbA app that lets you register and login to an option page where you choose between three categories - players stats, stadiums, and Kobe's tribute. Stadiums and Kobe's tribute are future functionalities. The players stats will take you to another page where you have all displayed players with hover cards. All hover cards will display their pictures, team logo, and stats. All picture and stats are from 2017/2018 season.
 
+Link to live app - https://hanscode-midterm.herokuapp.com/
 
-tools -
+tools used for this project 
 - node js - https://nodejs.org/en/
 - 3rd party API - https://nba-players.herokuapp.com/
 - team colors - https://teamcolorcodes.com/nba-team-color-codes/ 
