@@ -13,13 +13,9 @@ module.exports = {
         const { name, email, password } = req.body;
         User.findOne({email: email}).then((user) => {
           if (user) {
-            //return req.flash('errors', 'User Already exists')
             return res.send('User Exists')
           } else {
               const newUser = new User();
-        
-          // const salt = bcrypt.genSaltSync(10);
-          // const hash = bcrypt.hashSync(params.password, salt);
         
           newUser.name = name;
           newUser.email = email;

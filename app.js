@@ -4,13 +4,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 require('dotenv').config();
 const flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport =require('passport');
-const methodOverride = require('method-override');
 const cors = require('cors');
 
 const indexRouter = require('./routes/index');
