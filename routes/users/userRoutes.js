@@ -24,17 +24,7 @@ router.get('/login', (req, res) => {
   res.render('auth/login', {error:null})
 })
 
-router.get('/player', function(req, res, next) {
-  let url = "https://nba-players.herokuapp.com/players-stats";
-
-  let settings = { method: "Get" };
-  
-  fetch(url, settings)
-      .then(res => res.json())
-      .then((data) => {
-        res.render('index', {data})
-      })
-  })
+router.get('/player', userController.api);
 
 router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/users/option',
