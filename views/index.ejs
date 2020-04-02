@@ -5,26 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/stylesheets/styles.css">
-    <% data.forEach((post) => { %>
-    <link rel="stylesheet" href="/stylesheets/teams/<%= post.team_name.split(' ').slice(-1).join('') %>.css">
+    <% data.forEach((player) => { %>
+    <link rel="stylesheet" href="/stylesheets/teams/<%= player.team_name.split(' ').slice(-1).join('') %>.css">
     <% }) %>   
   </head>
   <body>
     <div class="wrapper">
-      <% data.forEach((post) => { %>
-      <aside class="profile-card <%= post.team_name.split(' ').slice(-1).join('') %> ">
-        <header class="<%= post.team_name.split(' ').slice(-1).join('') %>">
-          <img src='https://nba-players.herokuapp.com/players/<%= post.name.split(' ').slice(-1).join('') %>/<%= post.name.split(' ').slice(0, -1).join('') %>' width="50" />  
-          <h1><%= post.name %></h1>
-          <h2>- <%= post.team_name %>  -</h2>
+      <% data.forEach((player) => { %>
+      <aside class="profile-card <%= player.team_name.split(' ').slice(-1).join('') %> ">
+        <header class="<%= player.team_name.split(' ').slice(-1).join('') %>">
+          <img src='https://nba-players.herokuapp.com/players/<%= player.name.split(' ').slice(-1).join('') %>/<%= player.name.split(' ').slice(0, -1).join('') %>' width="50" />  
+          <h1><%= player.name %></h1>
+          <h2>- <%= player.team_name %>  -</h2>
         </header>
       <div class="profile-bio">
-        <img src="/images/teams/<%= post.team_name.split(' ').slice(-1).join('') %>.png " width="50px"/>
+        <img src="/images/teams/<%= player.team_name.split(' ').slice(-1).join('') %>.png " width="50px"/>
           <div id="profile-stats">
-            <p>Games Played: <%= post.games_played %> </p>
-            <p>Field Goals Made Per Game: <%= post.field_goals_made_per_game %> </p>
-            <p>Rebound: <%= post.rebounds_per_game %> </p>
-            <p>Assists: <%= post.assists_per_game %> </p>
+            <h6>Games Played: <%= player.games_played %> </h6>
+            <h6>Field Goals Made Per Game: <%= player.field_goals_made_per_game %> </h6>
+            <h6>Rebound: <%= player.rebounds_per_game %> </h6>
+            <h6>Assists: <%= player.assists_per_game %> </h6>
           </div>
       </div>
       </aside>
